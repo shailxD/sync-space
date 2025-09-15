@@ -64,7 +64,7 @@ export const BoardCard = ({
   };
 
   return (
-    <Link href={`/boards/${id}`}>
+    <Link href={`/board/${id}`}>
       <div
         className={cn(
           "group aspect-[100/127] overflow-hidden rounded-lg border",

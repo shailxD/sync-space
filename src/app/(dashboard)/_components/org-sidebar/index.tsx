@@ -1,30 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Poppins } from "next/font/google";
 import { OrganizationSwitcher } from "@clerk/nextjs";
 
-import { SyncSpaceLogo } from "@/assets/logos";
-import { cn } from "@/lib/utils";
 import { OrgButtons } from "./org-buttons";
-
-const font = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
+import { Logo } from "@/components/logo";
 
 export const OrgSidebar = () => {
   return (
     <div className="hidden w-[250px] flex-col space-y-6 pt-4 pl-5 lg:flex">
       <Link href="/">
-        <div className="flex items-center gap-x-2">
-          <SyncSpaceLogo className="size-14" />
-          <div className="flex items-center gap-x-1">
-            <span className={cn(font.className, "text-xl font-semibold")}>
-              Sync
-            </span>
-            <span className={cn(font.className, "text-xl font-normal")}>
-              Space
-            </span>
-          </div>
-        </div>
+        <Logo />
       </Link>
 
       <OrganizationSwitcher
