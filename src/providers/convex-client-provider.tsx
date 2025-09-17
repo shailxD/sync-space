@@ -9,8 +9,7 @@ import {
   useAuth,
 } from "@clerk/nextjs";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
-import { Authenticated, AuthLoading, ConvexReactClient } from "convex/react";
-import { Loading } from "@/components/auth/loading";
+import { ConvexReactClient } from "convex/react";
 
 interface ConvexClientProviderProps {
   children: ReactNode;
