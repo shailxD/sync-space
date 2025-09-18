@@ -21,6 +21,12 @@ interface BoardListProps {
 export const BoardList = ({ orgId, query }: BoardListProps) => {
   const data = useQuery(api.boards.get, { orgId, ...query });
 
+  // Debug logging
+  console.log("BoardList - orgId:", orgId);
+  console.log("BoardList - query:", query);
+  console.log("BoardList - data:", data);
+  console.log("BoardList - data?.length:", data?.length);
+
   if (data === undefined) {
     return (
       <div>
@@ -57,7 +63,7 @@ export const BoardList = ({ orgId, query }: BoardListProps) => {
         {query.favorites ? "Favorite Boards" : "Team Boards"}
       </h2>
       <div className="mt-8 grid grid-cols-1 gap-5 pb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-        <NewBoardButton orgId={orgId} disabled={false} />
+        <NewBoardButton orgId={orgId} />
         {data.map((board) => (
           <BoardCard
             key={board._id}

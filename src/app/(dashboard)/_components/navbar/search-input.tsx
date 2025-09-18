@@ -1,19 +1,19 @@
 "use client";
 
+import { useEffect } from "react";
 import qs from "query-string";
 import { Search } from "lucide-react";
 import { useDebounceValue } from "usehooks-ts";
 import { useRouter } from "next/navigation";
-import { ChangeEvent, useEffect, useState } from "react";
+
 import { Input } from "@/components/ui/input";
 
 export const SearchInput = () => {
   const router = useRouter();
-  const [value, setValue] = useState("");
-  const [debouncedValue] = useDebounceValue(value, 500);
+  const [debouncedValue, setValue] = useDebounceValue("", 500);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    setValue(e.target.value);
   };
 
   useEffect(() => {
@@ -37,7 +37,6 @@ export const SearchInput = () => {
         className="w-full max-w-[516px] pl-9"
         placeholder="Search boards"
         onChange={handleChange}
-        value={value}
       />
     </div>
   );
