@@ -4,6 +4,10 @@ Sync Space is built with [Next.js](https://nextjs.org/), [shadcn/ui](https://ui.
 
 The application is deployed on Vercel [here](https://sync-space-ten.vercel.app/), though it is by invitation only for now.
 
+![Screenshot-Home](./public/screenshots/screenshot-home-desktop.webp)
+
+![Screenshot-Board](./public/screenshots/screenshot-board-desktop.webp)
+
 ## Getting Started
 
 1. Clone the repository and install dependencies:
